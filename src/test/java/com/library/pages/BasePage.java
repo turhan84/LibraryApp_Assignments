@@ -18,9 +18,6 @@ public abstract  class BasePage {
     }
 
 
-    @FindBy(tagName = "h3")
-    public WebElement pageHeader;
-
     @FindBy(css = "#navbarDropdown>span")
     public WebElement accountHolderName;
 
