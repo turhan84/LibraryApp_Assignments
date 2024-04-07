@@ -1,15 +1,15 @@
-Feature: As a data consumer, I want the user information are stored in mySql DB correctly in users table.
+Feature: As a data consumer, I want the user information are stored in mySql DB correctly in users table._AL
   Background:
-    Given Establish the database connection
+    Given Establish the database connection AL
   @wip @db
-  Scenario: verify users has unique IDs AB
-    When Execute query to get all IDs from users AB
-    Then verify all users has unique ID AB
+  Scenario: verify users has unique IDs AL
+    When Execute query to get all IDs from users AL
+    Then verify all users has unique ID AL
 
 
-  Scenario: verify users table columns
-    When Execute query to get all columns AB
-    Then verify the below columns are listed in result AB
+  Scenario: verify users table columns_AL
+    When Execute query to get all columns AL
+    Then verify the below columns are listed in result AL
 
       | id            |
       | full_name     |
