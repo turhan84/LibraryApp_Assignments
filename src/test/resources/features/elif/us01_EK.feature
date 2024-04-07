@@ -2,14 +2,14 @@ Feature: As a data consumer, I want the user information are stored in mySql DB 
   Background:
     Given Establish the database connection
   @wip @db
-  Scenario: verify users has unique IDs
-    When Execute query to get all IDs from users
-    Then verify all users has unique ID
+  Scenario: verify users has unique IDs EK
+    When Execute query to get all IDs from users EK
+    Then verify all users has unique ID EK
 
 
   Scenario: verify users table columns
-    When Execute query to get all columns
-    Then verify the below columns are listed in result
+    When Execute query to get all columns EK
+    Then verify the below columns are listed in result EK
 
       | id            |
       | full_name     |
