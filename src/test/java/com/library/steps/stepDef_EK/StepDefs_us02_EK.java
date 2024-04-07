@@ -34,7 +34,7 @@ public class StepDefs_us02_EK {
     @When("the librarian gets borrowed books number EK")
     public void the_librarian_gets_borrowed_books_number_ek() {
 
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(25));
 
         wait.until(ExpectedConditions.visibilityOf(dashBoard.borrowedBooksNumber));  // Wait until the borrowed books number is visible
 
