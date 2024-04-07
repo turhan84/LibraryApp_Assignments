@@ -1,8 +1,8 @@
 
-Feature: Books module
-  As a students, I should be able to borrow book
+Feature: Books module TI
+  As a students, I should be able to borrow book TI
 
-  Scenario: Student borrow new book
+  Scenario: Student borrow new book TI
     Given the "student" on the home page TI
     And the user navigates to "Books" page TI
     And the user searches for "Self Confidence" book TI
