@@ -6,7 +6,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
-public class UserStepDefs {
+public class UserStepDefs_HT {
     String actualUserCount;
     @Given("Establish the database connection")
     public void establish_the_database_connection() {
