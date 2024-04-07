@@ -3,17 +3,17 @@ Feature: Books module
   As a librarian, I should be able to add new book into library
 
   Scenario Outline: Verify added book is matching with DB
-    Given the "librarian" on the home page
-    And the user navigates to "Books" page
-    When the librarian click to add book
-    And the librarian enter book name "<Book Name>"
-    When the librarian enter ISBN "<ISBN>"
-    And the librarian enter year "<Year>"
-    When the librarian enter author "<Author>"
-    And the librarian choose the book category "<Book Category>"
-    And the librarian click to save changes
-    Then verify "The book has been created" message is displayed
-    And verify "<Book Name>" information must match with DB
+    Given the "librarian" on the home page EK
+    And the user navigates to "Books" page EK
+    When the librarian click to add book EK
+    And the librarian enter book name "<Book Name>" EK
+    When the librarian enter ISBN "<ISBN>" EK
+    And the librarian enter year "<Year>" EK
+    When the librarian enter author "<Author>" EK
+    And the librarian choose the book category "<Book Category>" EK
+    And the librarian click to save changes EK
+    Then verify "The book has been created" message is displayed EK
+    And verify "<Book Name>" information must match with DB EK
     Examples:
       | Book Name             | ISBN     | Year | Author          | Book Category        |
       | Head First Java       | 10112021 | 2021 | Kathy Sierra    | Action and Adventure |
