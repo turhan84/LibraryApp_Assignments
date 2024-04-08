@@ -17,6 +17,7 @@ import java.util.List;
 public class StepDefs_us04_EK {
 
     BookPage bookpage = new BookPage();
+    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
 
     @When("the user searches for {string} book EK")
     public void the_user_searches_for_book_ek(String book) {
@@ -37,7 +38,7 @@ public class StepDefs_us04_EK {
     @Then("book information must match the Database EK")
     public void book_information_must_match_the_database_ek() {
 
-
+        wait.until(ExpectedConditions.visibilityOf(bookpage.year));
         List<String> uiData = new ArrayList<>();
         uiData.add(bookpage.bookName.getAttribute("value"));
         uiData.add(bookpage.author.getAttribute("value"));
@@ -46,7 +47,7 @@ public class StepDefs_us04_EK {
         uiData.add(bookpage.categoryDropdown.getAttribute("value"));
 
 
-        String query = "SELECT name, author, year, isbn, book_category_id  FROM books WHERE name = 'Clean Code'";
+        String query = "SELECT b.name, b.author, b.year, b.isbn, bc.name as category_name FROM books b INNER JOIN book_categories bc ON b.book_category_id = bc.id WHERE b.name = 'CodeCraft'";
         DB_Util.runQuery(query);
 
         List<String> dbData = DB_Util.getRowDataAsList(1);
