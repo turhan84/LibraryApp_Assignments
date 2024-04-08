@@ -53,6 +53,7 @@ public class StepDefs_us01_TI {
 
         System.out.println("expectedColumnsTable = " + expectedColumnsNames);
         Assert.assertEquals(expectedColumnsNames,allColumnNames);
+
     }
 
 }
