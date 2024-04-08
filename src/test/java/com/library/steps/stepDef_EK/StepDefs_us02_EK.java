@@ -18,7 +18,6 @@ import java.time.Duration;
 public class StepDefs_us02_EK {
 
     LoginPage login = new LoginPage();
-    BorrowedBooksPage borrowedBooks = new BorrowedBooksPage();
     DashBoardPage dashBoard = new DashBoardPage();
     String actualBorrowedBooksNumber;
 

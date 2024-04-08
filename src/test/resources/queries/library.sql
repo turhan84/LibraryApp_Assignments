@@ -9,3 +9,7 @@ select * from users;
     select id from users;
     -- getAllColumnAsList --> List --> size  --> EXPECTED
     -- getAllColumnAsList --> Set  --> size  --> EXPECTED
+
+select * from book_borrow;
+
+SELECT name FROM book_categories
