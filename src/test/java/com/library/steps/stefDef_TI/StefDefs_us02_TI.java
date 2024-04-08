@@ -28,6 +28,7 @@ public class StefDefs_us02_TI {
         login.login(librarian);
 
     }
+
     @When("the librarian gets borrowed books number TI")
     public void the_librarian_gets_borrowed_books_number_ti() {
 
@@ -38,15 +39,16 @@ public class StefDefs_us02_TI {
         System.out.println("actualBorrowedBooksNumber = " + actualBorrowedBooksNumber);
 
     }
+
     @Then("borrowed books number information must match with DB TI")
     public void borrowed_books_number_information_must_match_with_db_ti() {
 
-        String query="select count(id) from book_borrow where is_returned =0";
+        String query = "select count(id) from book_borrow where is_returned =0";
         DB_Util.runQuery(query);
 
         String expectedBorrowedBooksNumber = DB_Util.getFirstRowFirstColumn();
 
-        Assert.assertEquals(expectedBorrowedBooksNumber,actualBorrowedBooksNumber);
+        Assert.assertEquals(expectedBorrowedBooksNumber, actualBorrowedBooksNumber);
 
         System.out.println("All actual borrowed books numbers are verified successfully.");
     }
