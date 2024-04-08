@@ -32,7 +32,6 @@ public class StepDefs_us01_EK {
 
     }
 
-
     @Then("verify all users has unique ID EK")
     public void verify_all_users_has_unique_id_ek() {
         String query="select  count(distinct id) from users";

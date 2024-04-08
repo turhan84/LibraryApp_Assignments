@@ -20,12 +20,11 @@ public class StepDefs_us03_EK {
     DashBoardPage dashBoard = new DashBoardPage();
     BookPage bookPage = new BookPage();
     List<String> actualCategoryList = new ArrayList<>();
-
+    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
 
     @When("the user navigates to {string} page EK")
     public void the_user_navigates_to_page_ek(String books) {
 
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
 
         wait.until(ExpectedConditions.visibilityOf(dashBoard.borrowedBooksNumber));
 

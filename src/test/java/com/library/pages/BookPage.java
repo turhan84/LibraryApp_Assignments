@@ -47,6 +47,9 @@ public class BookPage extends BasePage {
     @FindBy(id = "description")
     public WebElement description;
 
+    @FindBy(xpath = "//a[contains(@onclick, 'Books.edit_book(23489)')]")
+    public WebElement editBook;
+
 
 
 
@@ -59,6 +62,8 @@ public class BookPage extends BasePage {
         String xpath = "//td[3][.='" + book + "']/../td/a";
         return Driver.getDriver().findElement(By.xpath(xpath));
     }
+
+
 
 
 
