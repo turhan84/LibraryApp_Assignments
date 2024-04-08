@@ -47,10 +47,7 @@ public class StefDefs_us04_TI {
         actualBookInfo.add(bookPage.isbn.getAttribute("value"));
         actualBookInfo.add(bookPage.categoryDropdown.getAttribute("value"));
 
-        String query = "SELECT books.name, author, year, isbn, bc.name\n" +
-                "FROM books  join book_categories bc\n" +
-                "    on books.book_category_id = bc.id\n" +
-                "WHERE books.name ='"+bookPage.bookName+"'";
+        String query = "SELECT books.name, author, year, isbn, bc.name FROM books  join book_categories bc on books.book_category_id = bc.id WHERE books.name ='"+bookPage.bookName+"'";
 
         DB_Util.runQuery(query);
 
