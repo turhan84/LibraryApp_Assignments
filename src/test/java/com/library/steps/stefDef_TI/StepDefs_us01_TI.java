@@ -16,14 +16,17 @@ public class StepDefs_us01_TI {
 
     @When("Execute query to get all IDs from users TI")
     public void execute_query_to_get_all_i_ds_from_users_ti() {
+
         String query="select count(id) from users";
         DB_Util.runQuery(query);
 
         actualUserCount = DB_Util.getFirstRowFirstColumn();
         System.out.println("actualUserCount = " + actualUserCount);
+
     }
     @Then("verify all users has unique ID TI")
     public void verify_all_users_has_unique_id_ti() {
+
         String query="select  count(distinct id) from users";
         DB_Util.runQuery(query);
 
@@ -35,6 +38,7 @@ public class StepDefs_us01_TI {
 
     @When("Execute query to get all columns TI")
     public void execute_query_to_get_all_columns_ti() {
+
         String query="select * from users";
         DB_Util.runQuery(query);
         allColumnNames = DB_Util.getAllColumnNamesAsList();
@@ -45,9 +49,10 @@ public class StepDefs_us01_TI {
 
 
     @Then("verify the below columns are listed in result TI")
-    public void verify_the_below_columns_are_listed_in_result_ti(List<String> expectedColumnsTable) {
-        System.out.println("expectedColumnsTable = " + expectedColumnsTable);
-        Assert.assertEquals(expectedColumnsTable,allColumnNames);
+    public void verify_the_below_columns_are_listed_in_result_ti(List<String> expectedColumnsNames) {
+
+        System.out.println("expectedColumnsTable = " + expectedColumnsNames);
+        Assert.assertEquals(expectedColumnsNames,allColumnNames);
     }
 
 }
