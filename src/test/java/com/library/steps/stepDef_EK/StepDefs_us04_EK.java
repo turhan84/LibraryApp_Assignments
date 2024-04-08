@@ -29,7 +29,7 @@ public class StepDefs_us04_EK {
     @When("the user clicks edit book button EK")
     public void the_user_clicks_edit_book_button_ek() {
 
-        bookpage.editBook("Clean Code");
+        bookpage.editBook.click();
 
     }
 
@@ -43,11 +43,10 @@ public class StepDefs_us04_EK {
         uiData.add(bookpage.author.getAttribute("value"));
         uiData.add(bookpage.year.getAttribute("value"));
         uiData.add(bookpage.isbn.getAttribute("value"));
-        uiData.add(bookpage.description.getAttribute("value"));
         uiData.add(bookpage.categoryDropdown.getAttribute("value"));
 
 
-        String query = "SELECT name, author, year, isbn, description, book_category_id  FROM books WHERE name = 'Clean Code'";
+        String query = "SELECT name, author, year, isbn, book_category_id  FROM books WHERE name = 'Clean Code'";
         DB_Util.runQuery(query);
 
         List<String> dbData = DB_Util.getRowDataAsList(1);
