@@ -7,6 +7,7 @@ import com.library.utility.Driver;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -39,6 +40,8 @@ public class StefDefs_us04_TI {
     @Then("book information must match the Database TI")
     public void book_information_must_match_the_database_ti() {
 
+
+
         wait.until(ExpectedConditions.visibilityOf(bookPage.categoryDropdown));
         List<String> actualBookInfo = new ArrayList<>();
         actualBookInfo.add(bookPage.bookName.getAttribute("value"));
@@ -47,11 +50,11 @@ public class StefDefs_us04_TI {
         actualBookInfo.add(bookPage.isbn.getAttribute("value"));
         actualBookInfo.add(bookPage.categoryDropdown.getAttribute("value"));
 
-        String query = "SELECT books.name, author, year, isbn, bc.name FROM books  join book_categories bc on books.book_category_id = bc.id WHERE books.name ='"+bookPage.bookName+"'";
-
+        String query = "SELECT books.name, author, year, isbn, bc.name FROM books  join book_categories bc on books.book_category_id = bc.id WHERE books.name ='Istanbul'";
+//"+bookPage.bookName+"
         DB_Util.runQuery(query);
 
-        List<String> dbBookInfo = DB_Util.getColumnDataAsList(1);
+        List<String> dbBookInfo = DB_Util.getRowDataAsList(1);
 
         System.out.println("dbBookInfo = " + dbBookInfo);
         System.out.println("actualBookInfo = " + actualBookInfo);
