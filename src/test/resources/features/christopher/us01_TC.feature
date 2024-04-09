@@ -1,15 +1,15 @@
 Feature: As a data consumer, I want the user information are stored in mySql DB correctly in users table.
   Background:
-    Given Establish the database connection NY
-  @wip_NY @db
-  Scenario: verify users has unique IDs
-    When Execute query to get all IDs from users NY
-    Then verify all users has unique ID NY
+    Given Establish the database connection_TC
+  @wip @db
+  Scenario: verify users has unique IDs_TC
+    When Execute query to get all IDs from users_TC
+    Then verify all users has unique ID_TC
 
-  @wip_NY @db
-  Scenario: verify users table columns
-    When Execute query to get all columns NY
-    Then verify the below columns are listed in result NY
+
+  Scenario: verify users table columns TC
+    When Execute query to get all columns_TC
+    Then verify the below columns are listed in result_TC
 
       | id            |
       | full_name     |
