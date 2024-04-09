@@ -12,4 +12,5 @@ select * from users;
 
 select * from book_borrow;
 
-SELECT name FROM book_categories
+SELECT * FROM books where name='CodeCraft';
+SELECT * FROM book_categories;
