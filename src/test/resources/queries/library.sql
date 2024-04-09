@@ -10,7 +10,3 @@ select * from users;
     -- getAllColumnAsList --> List --> size  --> EXPECTED
     -- getAllColumnAsList --> Set  --> size  --> EXPECTED
 
-select * from book_borrow;
-
-SELECT * FROM books where name='CodeCraft';
-SELECT * FROM book_categories;
