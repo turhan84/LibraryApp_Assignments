@@ -9,4 +9,3 @@ select * from users;
     select id from users;
     -- getAllColumnAsList --> List --> size  --> EXPECTED
     -- getAllColumnAsList --> Set  --> size  --> EXPECTED
-
