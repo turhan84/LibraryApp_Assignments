@@ -51,7 +51,6 @@ public class StepDefs_us01_EK {
         DB_Util.runQuery(query);
 
         allColumnNames = DB_Util.getAllColumnNamesAsList();
-
         System.out.println("allColumnNames = " + allColumnNames);
 
 
