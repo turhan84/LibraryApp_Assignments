@@ -1,6 +1,6 @@
-@wip_EK @ui @db
+@wip_EK3 @ui @db
 Feature: As a data consumer, I want UI and DB book categories are match.
-  @wip_EK @ui @db
+  @wip_EK3 @ui @db
   Scenario: verify book categories with DB
     Given the "librarian" on the home page EK
     When the user navigates to "Books" page EK

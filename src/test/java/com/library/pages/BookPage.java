@@ -1,6 +1,8 @@
 package com.library.pages;
 
+import com.library.utility.BrowserUtil;
 import com.library.utility.Driver;
+import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,6 +11,7 @@ import org.openqa.selenium.support.ui.Select;
 import java.util.List;
 
 public class BookPage extends BasePage {
+
 
     @FindBy(xpath = "//table/tbody/tr")
     public List<WebElement> allRows;
@@ -41,7 +44,7 @@ public class BookPage extends BasePage {
     @FindBy(name = "isbn")
     public WebElement isbn;
 
-    @FindBy(xpath = "//label[contains(text(),'Book Name')]/following-sibling::input")
+    @FindBy(id = "book_group_id")
     public WebElement categoryDropdown;
 
 
@@ -67,6 +70,7 @@ public class BookPage extends BasePage {
         String xpath = "//td[3][.='" + book + "']/../td/a";
         return Driver.getDriver().findElement(By.xpath(xpath));
     }
+
 
 
 
