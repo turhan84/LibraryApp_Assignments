@@ -1,7 +1,7 @@
 
 Feature: Books module TI
   As a students, I should be able to borrow book TI
-
+  @wip_us07_TI @ui @db
   Scenario: Student borrow new book TI
     Given the "student" on the home page TI
     And the user navigates to "Books" page TI

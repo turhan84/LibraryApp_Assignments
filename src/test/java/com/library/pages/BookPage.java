@@ -52,7 +52,11 @@ public class BookPage extends BasePage {
     public WebElement editBook;
 
 
+    @FindBy(xpath = "//a[contains(@onclick, 'Books.edit_book')]")
+    public WebElement editBookDynamic;
 
+    @FindBy(id = "book_group_id")
+    public WebElement selectedBookCategory;
 
     public WebElement editBook(String book) {
         String xpath = "//td[3][.='" + book + "']/../td/a";
