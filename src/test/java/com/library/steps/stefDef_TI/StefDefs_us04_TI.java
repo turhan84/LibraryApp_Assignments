@@ -7,8 +7,10 @@ import com.library.utility.Driver;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -48,7 +50,15 @@ public class StefDefs_us04_TI {
         actualBookInfo.add(bookPage.author.getAttribute("value"));
         actualBookInfo.add(bookPage.year.getAttribute("value"));
         actualBookInfo.add(bookPage.isbn.getAttribute("value"));
-        actualBookInfo.add(bookPage.categoryDropdown.getAttribute("value"));
+
+
+        String bookCategoryValue = bookPage.selectedBookCategory.getAttribute("value");
+
+        BrowserUtil.waitFor(4);
+        String xpath = "(//option[@value='" + bookCategoryValue + "'])[2]";
+        String selectedBookCategoryText = Driver.getDriver().findElement(By.xpath(xpath)).getText();
+
+        actualBookInfo.add(selectedBookCategoryText);
 
         String query = "SELECT books.name, author, year, isbn, bc.name FROM books  join book_categories bc on books.book_category_id = bc.id WHERE books.name ='Istanbul'";
 //"+bookPage.bookName+"
