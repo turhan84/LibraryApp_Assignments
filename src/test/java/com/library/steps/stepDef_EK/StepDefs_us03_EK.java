@@ -26,7 +26,7 @@ public class StepDefs_us03_EK {
     public void the_user_navigates_to_page_ek(String books) {
 
 
-        wait.until(ExpectedConditions.visibilityOf(dashBoard.borrowedBooksNumber));
+       // wait.until(ExpectedConditions.visibilityOf(dashBoard.borrowedBooksNumber));
 
        dashBoard.navigateModule(books);
 

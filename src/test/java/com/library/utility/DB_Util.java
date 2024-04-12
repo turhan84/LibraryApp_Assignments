@@ -252,6 +252,12 @@ public class DB_Util {
 
     }
 
+    public static String getFirstRowSecondColumn(){
+
+        return getCellValue(1,2) ;
+
+    }
+
     //
 
     /**

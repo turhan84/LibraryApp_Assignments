@@ -8,6 +8,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -44,8 +45,9 @@ public class StepDefs_us04_EK {
         uiData.add(bookpage.author.getAttribute("value"));
         uiData.add(bookpage.year.getAttribute("value"));
         uiData.add(bookpage.isbn.getAttribute("value"));
-        uiData.add(bookpage.categoryDropdown.getAttribute("value"));
-
+        Select categorySelect = new Select(bookpage.categoryDropdown);
+        String selectedCategory = categorySelect.getFirstSelectedOption().getText();
+        uiData.add(selectedCategory);
 
         String query = "SELECT b.name, b.author, b.year, b.isbn, bc.name as category_name FROM books b INNER JOIN book_categories bc ON b.book_category_id = bc.id WHERE b.name = 'CodeCraft'";
         DB_Util.runQuery(query);
