@@ -23,11 +23,14 @@ public class StefDefs_us04_TI {
 
     BookPage bookPage = new BookPage();
 
+    String bookTitle ;
+
     @When("the user searches for {string} book TI")
     public void the_user_searches_for_book_ti(String book) {
 
         BrowserUtil.waitFor(2);
         bookPage.search.sendKeys(book);
+        bookTitle = book;
         BrowserUtil.waitFor(2);
 
     }
@@ -60,7 +63,7 @@ public class StefDefs_us04_TI {
 
         actualBookInfo.add(selectedBookCategoryText);
 
-        String query = "SELECT books.name, author, year, isbn, bc.name FROM books  join book_categories bc on books.book_category_id = bc.id WHERE books.name ='Istanbul'";
+        String query = "SELECT books.name, author, year, isbn, bc.name FROM books  join book_categories bc on books.book_category_id = bc.id WHERE books.name ='" + bookTitle + "'";
 //"+bookPage.bookName+"
         DB_Util.runQuery(query);
 
