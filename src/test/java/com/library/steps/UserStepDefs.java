@@ -6,6 +6,8 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
+import java.util.List;
+
 public class UserStepDefs {
     String actualUserCount;
     @Given("Establish the database connection")
@@ -46,5 +48,7 @@ public class UserStepDefs {
         System.out.println("------    DB CONN IS CLOSED BY HOOK -------");
         System.out.println("-----------------------------------------");
 
-    }
+
+
+        }
 }
