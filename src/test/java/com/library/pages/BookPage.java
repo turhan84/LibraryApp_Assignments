@@ -1,13 +1,17 @@
 package com.library.pages;
 
+import com.library.utility.BrowserUtil;
 import com.library.utility.Driver;
+import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
 public class BookPage extends BasePage {
+
 
     @FindBy(xpath = "//table/tbody/tr")
     public List<WebElement> allRows;
@@ -22,7 +26,7 @@ public class BookPage extends BasePage {
     public WebElement bookName;
 
 
-    @FindBy(xpath = "(//input[@type='text'])[4]")
+    @FindBy(xpath = "//label[contains(text(),'Author')]/following-sibling::input")
     public WebElement author;
 
     @FindBy(xpath = "//div[@class='portlet-title']//a")
@@ -47,7 +51,15 @@ public class BookPage extends BasePage {
     @FindBy(id = "description")
     public WebElement description;
 
+    @FindBy(xpath = "//a[@onclick='Books.edit_book(24801)']")
+    public WebElement editBook;
 
+
+    @FindBy(xpath = "//a[contains(@onclick, 'Books.edit_book')]")
+    public WebElement editBookDynamic;
+
+    @FindBy(id = "book_group_id")
+    public WebElement selectedBookCategory;
 
     public WebElement editBook(String book) {
         String xpath = "//td[3][.='" + book + "']/../td/a";
@@ -58,6 +70,10 @@ public class BookPage extends BasePage {
         String xpath = "//td[3][.='" + book + "']/../td/a";
         return Driver.getDriver().findElement(By.xpath(xpath));
     }
+
+
+
+
 
 
 

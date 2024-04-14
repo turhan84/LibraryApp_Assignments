@@ -1,7 +1,7 @@
 
 Feature: Books module TI
   As a librarian, I should be able to add new book into library TI
-
+  @wip_us06_TI @ui @db
   Scenario Outline: Verify added book is matching with DB TI
     Given the "librarian" on the home page TI
     And the user navigates to "Books" page TI

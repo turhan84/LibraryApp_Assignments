@@ -7,7 +7,7 @@ Feature: As a data consumer, I want the user information are stored in mySql DB 
     When Execute query to get all IDs from users EK
     Then verify all users has unique ID EK
 
-  @wip_EK @db
+  @wip_EK1 @db
   Scenario: verify users table columns
     When Execute query to get all columns EK
     Then verify the below columns are listed in result EK
